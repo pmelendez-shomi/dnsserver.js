@@ -1,0 +1,22 @@
+{
+  "name": "dnsserver.js",
+  "version": "1.0.0",
+  "description": "A simple dns server",
+  "main": "dnsserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmelendez-shomi/dnsserver.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmelendez-shomi/dnsserver.js/issues"
+  },
+  "homepage": "https://github.com/pmelendez-shomi/dnsserver.js#readme",
+  "dependencies": {
+    "config": "^1.19.0"
+  }
+}

@@ -19,12 +19,10 @@
 // THE SOFTWARE.
 //
 
+var config = require('config')
 var sys = require('sys'),
     Buffer = require('buffer').Buffer,
     dgram = require('dgram');
-
-host = 'localhost';
-port = 9999;
 
 // slices a single byte into bits
 // assuming only single bytes
@@ -406,29 +404,29 @@ server.addListener('error', function (e) {
 //TODO create records database
 
 records = {};
-records['tomhughescroucher.com'] = {};
-records['tomhughescroucher.com']['in'] = {};
-records['tomhughescroucher.com']['in']['a'] = [];
+records[config.domain] = {};
+records[config.domain]['in'] = {};
+records[config.domain]['in']['a'] = [];
 
 var r = {};
-r.qname = domainToQname('tomhughescroucher.com');
+r.qname = domainToQname(config.domain);
 r.qtype = 1;
 r.qclass = 1;
 r.ttl = 1;
 r.rdlength = 4;
 r.rdata = 0xBC8A0009;
 
-records['tomhughescroucher.com']['in']['a'].push(r);
+records[config.domain]['in']['a'].push(r);
 
 r = {};
-r.qname = domainToQname('tomhughescroucher.com');
+r.qname = domainToQname(config.domain);
 r.qtype = 1;
 r.qclass = 1;
 r.ttl = 1;
 r.rdlength = 4;
 r.rdata = 0x7F000001;
 
-records['tomhughescroucher.com']['in']['a'].push(r);
+records[config.domain]['in']['a'].push(r);
 
-server.bind(port, host);
-console.log('Started server on ' + host + ':' + port);
+server.bind(config.port, config.host);
+console.log('Started server on ' + config.host+ ':' + config.port);

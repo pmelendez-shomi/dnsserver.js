@@ -1,0 +1,11 @@
+{
+    "domain": "test.ca",
+    "port": 53,
+    "host": "localhost",
+    "credentials": {
+        "key":"1234"
+    },
+    "Logging": {
+        "level": "error"
+    }
+}
